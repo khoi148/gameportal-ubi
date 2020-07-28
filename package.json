@@ -1,0 +1,22 @@
+{
+  "name": "gameportal-ubi",
+  "version": "1.0.0",
+  "description": "Backend portal, contains info for game info, player info, events info, and rewards. Uses a MongoDB database, provides API routes for calling the server and doing CRUD operations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khoi148/gameportal-ubi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khoi148/gameportal-ubi/issues"
+  },
+  "homepage": "https://github.com/khoi148/gameportal-ubi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
