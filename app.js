@@ -9,6 +9,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const gameinfoRouter = require("./routes/gameinfo");
 const playerinfoRouter = require("./routes/playerinfo");
+const rewardsRouter = require("./routes/rewards");
 const app = express();
 
 app.use(logger("dev"));
@@ -20,6 +21,7 @@ app.use(indexRouter);
 app.use(usersRouter);
 app.use(gameinfoRouter);
 app.use(playerinfoRouter);
+app.use(rewardsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
