@@ -1,5 +1,5 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 router.get("/game/:gameId/player/:playerId", (req, res, next) => {
   //TODO: Get the reward object out of params, to update playerInfo Rewards
