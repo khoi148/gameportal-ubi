@@ -7,9 +7,17 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 //Package to use .env file as environment variables
 const dotenv = require("dotenv");
-dotenv.config();
 
-//connection to mongoDB, using mongoose ORM
+//main routes here
+const indexRouter = require("./routes/index");
+const gameinfoRouter = require("./routes/gameInfo");
+const playerinfoRouter = require("./routes/playerInfo");
+const rewardsRouter = require("./routes/rewards");
+const eventsRouter = require("./routes/events");
+const pretty = require("express-prettify");
+const app = express();
+
+dotenv.config();
 const connectionString = process.env.DB_CONNECTION;
 mongoose.connect(connectionString, {
   // some options to deal with deprecated warning, you don't have to worry about them.
@@ -19,24 +27,17 @@ mongoose.connect(connectionString, {
   useUnifiedTopology: true,
 });
 
-//main routes here
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-const gameinfoRouter = require("./routes/gameInfo");
-const playerinfoRouter = require("./routes/playerInfo");
-const rewardsRouter = require("./routes/rewards");
-const app = express();
-
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(pretty({ query: "pretty" }));
 
 app.use(indexRouter);
-app.use(usersRouter);
 app.use(gameinfoRouter);
 app.use(playerinfoRouter);
 app.use(rewardsRouter);
+app.use(eventsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

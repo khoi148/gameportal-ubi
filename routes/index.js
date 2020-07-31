@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-/* GET home page. */
+//home page
 router.get("/", (req, res, next) => {
-  //res.render('index', { title: 'Express' });
-  res.send("Hello World! Main Index Page");
+  res.send("Hello World! Main Index page for gameportal-ubi backend project");
 });
-//app.get("/", (req, res) => res.send("Hello World!"));
 
 module.exports = router;
