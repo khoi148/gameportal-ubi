@@ -14,7 +14,7 @@ API Usage Instructions:
 
 1. First go to the heroku link, to ping the server, might take a few seconds to start it.
 2. Use the routes described below to get responses in your browser. Output is in JSON, so a JSON formatter browser extension is recommended.
-   i.e. Example of a Route "/gameinfo/123456", starts after URL: "https://gameportal-ubi.herokuapp.com/gameinfo/12356"
+   i.e. Example of a Route "/gameinfo/5f23a62f2840bd54b08019d7", starts after URL: "https://gameportal-ubi.herokuapp.com/gameinfo/5f23a62f2840bd54b08019d7"
 
 -> Requirement 1: "Provide an API to know all the game information and upcoming events."
 

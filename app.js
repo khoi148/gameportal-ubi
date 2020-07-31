@@ -10,8 +10,8 @@ const dotenv = require("dotenv");
 
 //main routes here
 const indexRouter = require("./routes/index");
-const gameinfoRouter = require("./routes/gameInfo");
-const playerinfoRouter = require("./routes/playerInfo");
+const gameinfoRouter = require("./routes/gameinfo");
+const playerinfoRouter = require("./routes/playerinfo");
 const rewardsRouter = require("./routes/rewards");
 const eventsRouter = require("./routes/events");
 const pretty = require("express-prettify");
