@@ -7,19 +7,24 @@ const { insertEvents } = require("../util/insertDocuments");
 router.get("/listevents", async (req, res, next) => {
   try {
     const list = await Events.find();
-    res.status(200).send({ message: list });
+    res.status(200).send({ events: list });
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: "/Events/listgames not working" });
+    res.status(400).json({ message: "GET /Events/listgames not working" });
   }
 });
 
-//clear games DB, and insert 5 generic games
+//clear games DB, and insert 5 generic events
 router.post("/insertevents", (req, res, next) => {
   insertEvents();
-  res
-    .status(200)
-    .json({ message: "Events DB is cleared. Default events will be inserted" });
+  try {
+    res.status(200).json({
+      message: "Events DB is cleared. Default events will be inserted",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ message: "POST /insertevents is not working" });
+  }
 });
 
 module.exports = router;
