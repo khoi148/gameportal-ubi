@@ -64,4 +64,17 @@ To change the name of one player
 
 # Requirement 3: "Provide an API to get rewards from players when the event completes"
 
-IN Progress
+**STEP1**
+-Use `/listevents` to see a list of events.
+Pick one event and its \_id and gameRef values for the Step 3.
+
+**STEP2**
+-Use `/playerinfo/listplayers` again
+Choose a player entry, whose gameId matches the gameRef from Step 1.
+Use that player's playerId value i.e. '1001-0' in Step 3.
+
+**STEP3**
+-Use GET `/event/:eventId/game/:gameId/player/:playerId`
+with the appropiate values from STEPS 1 and 2.
+This gets the event reward amount AND update the player's rewards with the event amount.
+Feel free to use requirement 2's playerlookup feature, to see how the player's rewards changed.
