@@ -7,7 +7,7 @@ Summary: Backend portal, contains info for game info, player info, events info, 
 
 - Deployed on Heroku: https://gameportal-ubi.herokuapp.com/
 - Stored on Github: https://github.com/khoi148/gameportal-ubi
-- Database in MongoDB
+- Database in _MongoDB_ - env connection variable set privately on Heroku
 
 ## API Usage Instructions:
 
