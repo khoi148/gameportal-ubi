@@ -31,12 +31,13 @@ Start with route
   to reset the game and event databases, and insert some generic default entries.
 
 **STEP 2**
--Use GET `/gameinfo/listgames` to see a list of games in the Databases.
--Use GET `/listevents` to see a list of events for each game, in the Database
--When listing games, pick one game, and use it's ID for the next step.
+
+- Use GET `/gameinfo/listgames` to see a list of games in the Databases.
+- Use GET `/listevents` to see a list of events for each game, in the Database
+- When listing games, pick one game, and use it's ID for the next step.
 
 **STEP 3**
--Use GET `/gameinfo/:gameId`,
+Use GET `/gameinfo/:gameId`,
 i.e `/gameinfo/5f23a62f2840bd54b08019d7`
 To see info about one specific game, and it's upcoming events. All of its events will be listed with it.
 
@@ -49,32 +50,37 @@ Start with route
   to reset the player database, and insert some generic default players
 
 **STEP2**
--Use GET `/playerinfo/listplayers` to see a list of players in the Database. Choose one player, use their playerId and gameId values, for the next step
--Use GET `/gameinfo/:gameId/playerinfo/:playerId`
-i.e. `/gameinfo/5f27162dab76f761fa931160/playerinfo/1001-1`
-To lookup one player's info
+
+- Use GET `/playerinfo/listplayers` to see a list of players in the Database. Choose one player, use their playerId and gameId values, for the next step
+- Use GET `/gameinfo/:gameId/playerinfo/:playerId`
+  i.e. `/gameinfo/5f27162dab76f761fa931160/playerinfo/1001-1`
+  To lookup one player's info
 
 **STEP3**
--Use PUT `/gameinfo/:gameId/playerinfo/:playerId/stars/:newStars/coins/:newCoins`
-i.e. `/gameinfo/5f27162dab76f761fa931160/playerinfo/1001-1/stars/599/coins/300`
-To change the star and coin values for one player
--Use PUT `/gameinfo/:gameId/playerinfo/:playerId/fullname/:newName`
-i.e. `/gameinfo/5f27162dab76f761fa931160/playerinfo/1001-1/fullname/MegamanX`
-To change the name of one player
+
+- Use PUT `/gameinfo/:gameId/playerinfo/:playerId/stars/:newStars/coins/:newCoins`
+  i.e. `/gameinfo/5f27162dab76f761fa931160/playerinfo/1001-1/stars/599/coins/300`
+  To change the star and coin values for one player
+- Use PUT `/gameinfo/:gameId/playerinfo/:playerId/fullname/:newName`
+  i.e. `/gameinfo/5f27162dab76f761fa931160/playerinfo/1001-1/fullname/MegamanX`
+  To change the name of one player
 
 # Requirement 3: "Provide an API to get rewards from players when the event completes"
 
 **STEP1**
--Use `/listevents` to see a list of events.
-Pick one event and its \_id and gameRef values for the Step 3.
+
+- Use `/listevents` to see a list of events.
+  Pick one event and its \_id and gameRef values for the Step 3.
 
 **STEP2**
--Use `/playerinfo/listplayers` again
-Choose a player entry, whose gameId matches the gameRef from Step 1.
-Use that player's playerId value i.e. '1001-0' in Step 3.
+
+- Use `/playerinfo/listplayers` again
+  Choose a player entry, whose gameId matches the gameRef from Step 1.
+  Use that player's playerId value i.e. '1001-0' in Step 3.
 
 **STEP3**
--Use GET `/event/:eventId/game/:gameId/player/:playerId`
-with the appropiate values from STEPS 1 and 2.
-This gets the event reward amount AND update the player's rewards with the event amount.
-Feel free to use requirement 2's playerlookup feature, to see how the player's rewards changed.
+
+- Use GET `/event/:eventId/game/:gameId/player/:playerId`
+  with the appropiate values from STEPS 1 and 2.
+  This gets the event reward amount AND update the player's rewards with the event amount.
+  Feel free to use requirement 2's playerlookup feature, to see how the player's rewards changed.
